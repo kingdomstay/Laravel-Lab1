@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/news', function () {
+    $news = [
+        ["title" => "Первая новость", "content" => "Какой-то текст новости."],
+        ["title" => "Вторая новость", "content" => "Какой-то текст новости."]
+    ];
+    return view('news', ['news' => $news]);
+});
+Route::get('/news/{id}', function () {
+    return view('welcome');
+});
+Route::get('/about', function () {
+    return view('about');
+});

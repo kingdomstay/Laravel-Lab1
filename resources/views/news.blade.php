@@ -7,12 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('/css/style.css')}}">
-    <title>Главная</title>
+    <title>Новости</title>
 </head>
 <body>
 @include("components.header")
 <div class="container">
-    <h1 class="mt-5">Привет, Laravel!</h1>
+    <h1 class="mt-5">Новости</h1>
+    @foreach($news as $newsItem)
+        <div>
+            <h4>{{$newsItem['title']}}</h4>
+            <p>{{$newsItem['content']}}</p>
+        </div>
+    @endforeach
 </div>
 @include("components.footer")
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
