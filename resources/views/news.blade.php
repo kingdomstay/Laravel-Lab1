@@ -12,11 +12,14 @@
 <body>
 @include("components.header")
 <div class="container">
-    <h1 class="mt-5">Новости</h1>
+    <h1 class="mt-5 pb-2">Новости</h1>
     @foreach($news as $newsItem)
-        <div>
-            <h4>{{$newsItem['title']}}</h4>
-            <p>{{$newsItem['content']}}</p>
+        <div class="card w-100 mb-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{$newsItem['title']}}</h5>
+                <p class="card-text">{{$newsItem['content']}}</p>
+                <a href="/news/{{$newsItem['id']}}" class="btn btn-primary">Читать</a>
+            </div>
         </div>
     @endforeach
 </div>
